@@ -25,5 +25,5 @@ To trigger the simulation, you must point the **Engine** to your specific manife
 ```json
 {
     "project_id": "your_project_name",
-    "manifest_url": "[https://raw.githubusercontent.com/Dmitrii-Zavalin-Deployments/fluid_dynamics_simulator/main/manifests/your_manifest.json](https://raw.githubusercontent.com/Dmitrii-Zavalin-Deployments/fluid_dynamics_simulator/main/manifests/your_manifest.json)"
+    "manifest_url": "https://raw.githubusercontent.com/Dmitrii-Zavalin-Deployments/fluid_dynamics_simulator/main/manifests/your_manifest.json"
 }
