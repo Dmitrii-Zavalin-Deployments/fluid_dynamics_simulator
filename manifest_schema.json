@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Simulation Manifest Schema",
+  "type": "object",
+  "properties": {
+    "manifest_id": { "type": "string" },
+    "pipeline_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "target_repo", "requires", "produces"],
+        "properties": {
+          "name": { "type": "string" },
+          "target_repo": { "type": "string" },
+          "requires": { "type": "array", "items": { "type": "string" } },
+          "produces": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  },
+  "required": ["manifest_id", "pipeline_steps"]
+}
