@@ -31,3 +31,8 @@ To trigger the simulation, you must point the **Engine** to your specific manife
     "manifest_url": "https://raw.githubusercontent.com/Dmitrii-Zavalin-Deployments/fluid_dynamics_simulator/manifests/your_manifest.json",
     "description": "your project description"
 }
+
+> [!IMPORTANT]
+> **Forensic Identity Requirement:** When running similar projects or reusing the same manifest structure for a new simulation run, you **MUST** update either the `manifest_id` or the `project_id` (e.g., changing `navier_stokes_alpha_01` to `navier_stokes_alpha_02`) within the manifest file itself.
+>
+> The Engine uses these IDs as a **Metadata Handshake**. If the IDs in the fetched manifest do not match the IDs stored in the `config/orchestration_ledger.json`, the Engine will perform an automatic **Forensic Wipe** of the local ledger. This is a mandatory safety feature to prevent "Ghost" results or stale execution locks from a previous test from polluting your current simulation state.
