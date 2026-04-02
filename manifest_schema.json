@@ -4,17 +4,29 @@
   "type": "object",
   "properties": {
     "manifest_id": { "type": "string" },
+    "project_id": { "type": "string" },
     "pipeline_steps": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["name", "target_repo", "requires", "produces"],
         "properties": {
           "name": { "type": "string" },
           "target_repo": { "type": "string" },
-          "requires": { "type": "array", "items": { "type": "string" } },
-          "produces": { "type": "array", "items": { "type": "string" } }
-        }
+          "timeout_hours": { 
+            "type": "integer",
+            "minimum": 1,
+            "description": "Mandatory: Maximum execution window before the Engine declares a silent worker failure."
+          },
+          "requires": { 
+            "type": "array", 
+            "items": { "type": "string" } 
+          },
+          "produces": { 
+            "type": "array", 
+            "items": { "type": "string" } 
+          }
+        },
+        "required": ["name", "target_repo", "requires", "produces", "timeout_hours"]
       }
     }
   },

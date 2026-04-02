@@ -1,18 +1,13 @@
 {
-    "manifest_id": "navier_stokes_alpha_test",
-    "project_name": "Initial Fluid Dynamics Validation",
-    "version": "1.0.0",
-    "description": "Direct trigger for Navier-Stokes solver based on input presence.",
-    "pipeline_steps": [
-        {
-            "name": "navier_stokes_execution",
-            "target_repo": "Dmitrii-Zavalin-Deployments/navier_stokes_solver",
-            "requires": [
-                "fluid_simulation_input.json"
-            ],
-            "produces": [
-                "navier_stokes_output.zip"
-            ]
-        }
-    ]
+  "manifest_id": "fluid_test_01",
+  "project_id": "navier_stokes_alpha_01",
+  "pipeline_steps": [
+    {
+      "name": "navier_stokes_execution",
+      "target_repo": "Dmitrii-Zavalin-Deployments/navier_stokes_solver",
+      "timeout_hours": 6,
+      "requires": ["fluid_simulation_input.json"],
+      "produces": ["navier_stokes_output.zip"]
+    }
+  ]
 }
